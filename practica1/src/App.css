@@ -1,0 +1,39 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #feda4a;
+}
+
+
+button {
+    background-color: #feda4a;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+
+button:hover {
+    background-color: #e5c233;
+    transform: scale(1.05);
+}
+
+
+button:disabled {
+    background-color: #a59d7f;
+    cursor: not-allowed;
+}
+
