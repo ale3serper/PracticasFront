@@ -1,0 +1,50 @@
+
+.countryPanel{
+  max-width: 700px;
+  max-height: 800px;
+  width: 90%;
+  background-color: rgba(99, 89, 55, 0.9); /* fondo más oscuro y elegante */
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* sombra más suave */
+  color: #000000;
+  text-align: center;
+  margin: 2rem auto; /* centrado vertical y horizontal */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* efecto hover */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.countryPanel:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+.countryPanel img {
+  width: 100%;
+  max-height:400px;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.countryPanel h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+
+.countryPanel p {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
