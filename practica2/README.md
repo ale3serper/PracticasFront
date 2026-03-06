@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+EJECUCION
 
-First, run the development server:
+1. Instalar dependencias
+npm install
 
-```bash
+3. Ejecutar el proyecto en modo desarrollo``
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Abrir en el navegador
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ESTRUCTURA DE NAVEGACION
+/src/app
+  /componets
+    countryCard.tsx
+    countryPanel.tsx
+    countryCard.css
+    countryPanel.css
+    
+  /country/[name]
+    page.tsx
+    page.css
+    
+  /lib/[api]
+    allCountries.ts
+    axios.ts
+    countryByName.ts
+  /types
+    country.ts
+    index.ts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  page.tsx
+  page.css
+  
+  
+RUTA PRINCIPAL `/`
 
-## Learn More
+La página principal muestra un listado de países obtenidos desde la API.
 
-To learn more about Next.js, take a look at the following resources:
+Cada país se muestra mediante un componente `CountryCard` que incluye:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Bandera
+* Nombre común
+* Población
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+También se incluye un buscador que permite filtrar los países por nombre usando el estado del componente.
 
-## Deploy on Vercel
+Cada tarjeta es clicable y redirige a la página dinámica del país correspondiente.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+RUTA DINAMICA `/country/[name]`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cuando el usuario hace clic en un país, se navega a la ruta dinámica:
+/country/[name]
+
+Aquí se realiza una nueva petición a la API utilizando el nombre del país:
+https://restcountries.com/v3.1/name/{name}
+En esta página se muestran los siguientes datos:
+
+* Nombre oficial
+* Capital
+* Subregión
+* Lenguajes
+* Monedas
+
+También hay un boton para volver atras a la pagina principal.
+
+
+MANEJO DE DATOS DE LA API
+
+Uno de los principales problemas que tuve al usar la API de REST Countries es que algunos datos vienen como objetos anidados, por ejemplo:
+Los lenguajes vienen como objeto:
+
+"languages": {
+  "spa": "Spanish",
+  "cat": "Catalan"
+}
+
+Y para mostrarlos tuve que buscar en chatGPT como hacerlo porque no entendia muy bien ese formato, asi es como lo hice:
+Object.values(country.languages)
+Las monedas también vienen como objeto asi que tuve que hacer lo mismo.
+
+MAS PROBLEMAS
+A la hora de hacer el css cuando cambiaba cosas de el countryPanel no cambiaba nada. Me di cuenta de que habia llamado a los className de tanto countryCard como del panel igual, asi qeu se modificaban solo los de Card.
+
+Me costo tambien hacer que fueran clickables los paises porque puse mal los links, con eso tuve que pedir ayuda.
