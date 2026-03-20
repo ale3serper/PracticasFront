@@ -10,7 +10,7 @@ interface Props {
 
 const ProductCard=({ product }: Props) =>{
   return (
-    <SectionContainer>
+    <div className="productCard">
       <img src={product.thumbnail} />
       <h3 className="cardTitle">{product.title}</h3>
       <span className="productCategory">
@@ -23,7 +23,7 @@ const ProductCard=({ product }: Props) =>{
           Ver detalles
         </button>
       </Link>
-    </SectionContainer>
+    </div>
   );
 }
 

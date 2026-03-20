@@ -3,3 +3,18 @@
   font-weight: bold;
   color: #555;
 }
+
+
+.titulo {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 10px;
+}
+
+.titulo h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #000;
+  text-transform: uppercase;
+}

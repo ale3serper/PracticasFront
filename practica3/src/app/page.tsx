@@ -23,6 +23,9 @@ const Home=() =>{
 
   return (
     <SectionContainer>
+      <div className="titulo">
+        <h1>TIENDA ONLINE </h1>
+      </div>
       <SearchBar setSearchQuery={setSearchQuery} />
 
       <p className="resultados">
