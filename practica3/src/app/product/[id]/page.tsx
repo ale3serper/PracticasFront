@@ -14,7 +14,7 @@ const ProductDetail = async ({ params }: Props) => {
 
   return (
     <SectionContainer>
-      <Link href="/" className="backLink">← Volver</Link>
+      <Link href="/" className="back">← Volver</Link>
       <div className="detailCard">
       <div className="detailContainer">
         
@@ -26,8 +26,10 @@ const ProductDetail = async ({ params }: Props) => {
         
         <div className="infoSection">
           <h1 className="productTitle">{product.title}</h1>
-
-          <p className="brand">Marca: {product.brand}</p>
+          
+          
+          <p className="brand">Marca: 
+            {product.brand  ? product.brand :" Sin marca" }</p>
 
           <p className="rating">⭐ {product.rating}/5</p>
 

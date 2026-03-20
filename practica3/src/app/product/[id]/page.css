@@ -1,6 +1,6 @@
 
 
-.backLink {
+.back{
   display: inline-block;
   margin-bottom: 20px;
   color: #555;
@@ -9,7 +9,7 @@
   transition: color 0.2s ease;
 }
 
-.backLink:hover {
+.back:hover {
   color: #e60023;
 }
 

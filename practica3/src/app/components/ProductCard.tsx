@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Product } from "../types";
-import SectionContainer from "./SectionContainer";
 import "./ProductCard.css"
 
 
